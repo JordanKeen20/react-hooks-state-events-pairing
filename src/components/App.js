@@ -1,17 +1,24 @@
+import React from 'react';
 import video from "../data/video.js";
+import Buttons from './Buttons';
+import Video from './Video';
+
+
 
 function App() {
-  console.log("Here's your data:", video);
+  // console.log("Here's your data:", video);
 
   return (
     <div className="App">
-      <iframe
-        width="919"
-        height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
-        allowFullScreen
-        title="Thinking in React"
+      <Video 
+      video = {video.embedUrl}
+      update = {video.createdAt}
+      views = {video.views} 
+      />
+      <Buttons 
+      upvotes = {video.upvotes} 
+      downvotes = {video.downvotes} 
+      usersComment = {video.comments}
       />
     </div>
   );
